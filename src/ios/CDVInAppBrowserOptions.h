@@ -43,6 +43,9 @@
 @property (nonatomic, assign) BOOL allowinlinemediaplayback;
 @property (nonatomic, assign) BOOL hidden;
 @property (nonatomic, assign) BOOL disallowoverscroll;
+// 2SIMPLE
+@property (nonatomic, assign) BOOL fullscreen;
+//
 @property (nonatomic, copy) NSString* beforeload;
 
 + (CDVInAppBrowserOptions*)parseOptions:(NSString*)options;

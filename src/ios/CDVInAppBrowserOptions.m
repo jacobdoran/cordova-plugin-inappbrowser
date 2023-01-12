@@ -45,6 +45,9 @@
         self.toolbarcolor = nil;
         self.toolbartranslucent = YES;
         self.beforeload = @"";
+        // 2SIMPLE
+        self.fullscreen = YES;
+        //
     }
 
     return self;

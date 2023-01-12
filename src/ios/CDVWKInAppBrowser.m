@@ -18,6 +18,9 @@
  */
 
 #import "CDVWKInAppBrowser.h"
+#import <objc/runtime.h>
+#import <Cordova/CDVViewController.h>
+
 
 #if __has_include(<Cordova/CDVWebViewProcessPoolFactory.h>) // Cordova-iOS >=6
   #import <Cordova/CDVWebViewProcessPoolFactory.h>
@@ -1083,7 +1086,8 @@ BOOL isExiting = FALSE;
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return NO;
+    // CHANGED BY 2SIMPLE
+    return _browserOptions.fullscreen;
 }
 
 - (void)close
@@ -1142,8 +1146,10 @@ BOOL isExiting = FALSE;
 
 - (void) rePositionViews {
     CGRect viewBounds = [self.webView bounds];
-    CGFloat statusBarHeight = [self getStatusBarOffset];
-    
+    // CHANGED BY 2SIMPLE
+    CGFloat statusBarHeight = _browserOptions.fullscreen ? 0 : [self getStatusBarOffset];
+    // END CHANGED BY 2SIMPLE
+
     // orientation portrait or portraitUpsideDown: status bar is on the top and web view is to be aligned to the bottom of the status bar
     // orientation landscapeLeft or landscapeRight: status bar height is 0 in but lets account for it in case things ever change in the future
     viewBounds.origin.y = statusBarHeight;

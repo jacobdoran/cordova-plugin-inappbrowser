@@ -20,6 +20,9 @@
 -->
 # Release Notes
 
+### JACOB (Jan 12, 2023)
+Added fullscreen mode for iOS
+
 ### 5.0.0 (Feb 10, 2021)
 * [GH-828](https://github.com/apache/cordova-plugin-inappbrowser/pull/828) feat(ios): add `InAppBrowser`StatusBarStyle 'darkcontent' configuration option
 * [GH-823](https://github.com/apache/cordova-plugin-inappbrowser/pull/823) chore: bump engines requirements
